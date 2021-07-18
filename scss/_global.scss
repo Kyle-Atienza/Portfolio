@@ -1,0 +1,50 @@
+@import 'config';
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-size: 16px;
+    font-family: $Lato;
+    position: relative;
+    background: $light;
+}
+
+.container{
+    @include std-container;
+}
+
+
+
+// typography
+h1{
+    @include Lato-Black;
+    font-size: 6rem;
+    font-size: 5vw;
+    font-size: clamp(3.5rem, 5vw, 6rem);
+}
+h2{
+    @include Lato-Black;
+    font-size: clamp(2rem, 5vw, 3rem);
+}
+h3{
+    @include Lato-Black;
+    font-size: 1.5rem;
+    font-size: 1.3vw;
+    font-size: clamp(1rem, 1.3vw, 1.5rem);
+}
+p{
+    @include Lato-Light;
+    font-size: clamp(.9rem, 3vw, 1.2rem);
+    
+}
+button a{
+    @include Lato-Black;
+    font-size: 1rem;
+}
+a{
+    color: $dark;
+}
