@@ -47,6 +47,8 @@ $Lato: 'Lato', sans-serif;
 //button
 @mixin std-button{
     padding: 1em 2em;
+    // padding: .7em 1.4em;
+    padding: clamp(.7em, .9vw, 1em) clamp(1.4em, 1.8vw, 2em);
     border-radius: 5px;
     border: none;
     width: max-content;
