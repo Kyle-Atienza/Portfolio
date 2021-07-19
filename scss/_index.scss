@@ -79,6 +79,7 @@ main{
             display: flex;
             flex-direction: column;
             justify-content: center;
+            align-items: flex-end;
             text-align: right;
             position: relative;
             z-index: 2;
@@ -86,6 +87,10 @@ main{
             
             h1{
                 color: $primary;
+            }
+            button{
+                margin-top: calc(2vw + .5em);
+                background: $secomdary
             }
             
         }
@@ -121,7 +126,9 @@ main{
         .text-content{
             padding: 1em;
 
-            
+            h2{
+                color: $primary;
+            }
         }
         .skill{ 
             display: grid;
@@ -180,6 +187,10 @@ main{
             width: 50%;
             background: #F0DB4F;
         }
+        .jquery .progress{
+            width: 40%;
+            background: #0868AC;
+        }
         .php .progress{
             width: 20%;
             background:  #474A8A;
@@ -187,6 +198,10 @@ main{
         .sass .progress{
             width: 50%;
             background: #CD6799;
+        }
+        .bootstrap .progress{
+            width: 20%;
+            background: #563d7c;
         }
         
 
@@ -201,6 +216,10 @@ main{
         .text-content{
             text-align: center;
             margin-bottom: 100px;
+
+            h2{
+                color: $primary;
+            }
         }
         .projects{
             display: grid;

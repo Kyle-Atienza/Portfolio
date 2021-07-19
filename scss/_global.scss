@@ -12,6 +12,9 @@ body{
     position: relative;
     background: $light;
 }
+button{
+    @include std-button;
+}
 
 .container{
     @include std-container;
