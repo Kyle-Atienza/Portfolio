@@ -250,7 +250,7 @@ main{
                 .title{
                     position: absolute;
                     width: 100%;
-                    height: 50%;
+                    height: 100%;
                     z-index: 2;
                     display: flex;
                     flex-direction: column;
@@ -442,14 +442,19 @@ footer{
 
             .projects{
                 grid-template-columns: repeat(1, 1fr);
+                grid-auto-rows: minmax(200px, 50vh);
 
                 .project{
-
+                    
+                    
                     .title{
-                        position: unset;
+
                         transform: unset;
-                        padding: .5em;
-                        
+                        // background: linear-gradient(0deg, rgba(0, 0, 0, 0.6) -22.31%, rgba(0, 0, 0, 0.7) -22.3%, rgba(0, 0, 0, 0) 100%);
+                        // justify-content: flex-end;
+                        height: 40%;
+                        padding: 2em 0;
+                        // color: $light;
                     }
                 }
             }

@@ -13,6 +13,7 @@ body{
     font-family: $Lato;
     position: relative;
     background: $light;
+    overflow-x: hidden; 
 }
 button{
     @include std-button;
