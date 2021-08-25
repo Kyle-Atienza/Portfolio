@@ -81,7 +81,7 @@ header{
 }
 
 .about-me{
-    padding: 10vh;
+    // padding: 10vh;
     text-align: center;
 
     .title{
@@ -125,5 +125,119 @@ header{
 }
 
 .works{
+    background: $dark;
+    color: $white;
+    // padding: 15vh 0;
+
+    .title{
+        text-align: center;
+        margin-bottom: 2em;
+    }
+    
+    .project{
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        align-items: center;
+        gap: 1em;
+
+
+        .details{
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 1em;
+            text-align: center;
+
+            .buttons{
+
+                button{
+                    margin-bottom: 0;
+                    background: $primary;
+                    color: $white;
+                }
+                a{
+                    color: $white;
+                    font-size: .8rem;
+                    &:hover{
+                        color: $primary;
+                    }
+                }
+            }
+            .tools{
+                display: grid;
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+                gap: .5em;
+                place-items: center;
+                font-size: 1.5rem;
+
+            }
+        }
+        .prototype{
+            flex: 1;
+
+            img{
+                max-width: 100%;
+            }
+        }
+    }
+    .projects{
+        display: grid;
+        gap: 2em;
+
+        &>*:nth-child(even){
+        
+            .details{
+                order: 2;
+            }
+            .prototype{
+                order: 1;
+            }
+        }
+    }
+}
+
+.contact{
+    .title{
+        text-align: center;
+        margin-bottom: .5em;
+    }
+    .social-links{
+        display: flex;
+        list-style: none;
+        justify-content: center;
+        gap: 2em;
+        font-size: 1.5rem;
+    }
+    form{
+        display: flex;
+        flex-direction: column;
+        gap: 0.5em;
+        width: 70%;
+        margin: 2em auto;
+    }
+}
+
+footer{
+    
+    background: $grey;
+    .container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1em;
+        .logo{
+            width: 1.5rem;
+    
+            svg > path{
+                fill: $primary;
+            }
+        }
+        .nav-links{
+            display: flex; 
+            gap: 1em;
+            justify-content: center;
+            list-style: none;
+        }
+    }
     
 }

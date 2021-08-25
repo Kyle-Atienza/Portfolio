@@ -63,11 +63,14 @@
         </div>
     </section>
 
-    <section class="about-me">
-        <h2 class="title title-color ">About Me</h2>
-        <p class="content">I am a Information Technology student based in the Philippines and is veryt passionate on
-            web development, worked on small projects and always learning for new skills</p>
-        <button class="resume-btn">Check My Resume</button>
+    <section class="about-me spacer">
+        <div class="container">
+            <h2 class="title title-color ">About Me</h2>
+            <p class="content">I am a Information Technology student based in the Philippines and is veryt passionate on
+                web development, worked on small projects and always learning for new skills</p>
+            <button class="resume-btn">Check My Resume</button>
+
+        </div>
     </section>
 
     <section class="skills">
@@ -218,69 +221,98 @@
         </div>
     </section>
 
-    <section class="works">
-        <h2 class="title">Works</h2>
-        <p class="description">Here are some of my recent works</p>
+    <section class="works spacer">
+        <div class="title">
+            <h2 class="title-color">Works</h2>
+            <p class="description">Here are some of my recent works</p>
+        </div>
+        <div class="projects container">
 
-        <div class="project">
-            <div class="details">
-                <div class="title">
-                    <h5 class="project-title">Bernita</h5>
-                    <p class="description">A Restaurant Landing Page</p>
-                </div>
-                <div class="buttons">
-                    <button class="view-website">View Website</button>
-                    <a href="">View Repository</a>
-                </div>
-                <div class="tools">
-                    <p>Used With</p>
-                    <ul class="icons">
+            <div class="project">
+                <div class="details">
+                    <div class="name">
+                        <h5 class="project-name">Bernita</h5>
+                        <p class="description">A Restaurant Landing Page</p>
+                    </div>
+                    <div class="buttons">
+                        <button class="view-website">View Website</button>
+                        <a href="">View Repository</a>
+                    </div>
+                    <ul class="tools">
                         <li><i class="fab fa-html5"></i></li>
                         <li><i class="fab fa-css3-alt"></i></li>
                         <li><i class="fab fa-js-square"></i></li>
                     </ul>
                 </div>
+                <div class="prototype">
+                    <img src="imgs/phone.png" alt="">
+                </div>
             </div>
-            <div class="prototype"></div>
+
+            <div class="project">
+                <div class="details">
+                    <div class="name">
+                        <h5 class="project-name">Bernita</h5>
+                        <p class="description">A Restaurant Landing Page</p>
+                    </div>
+                    <div class="buttons">
+                        <button class="view-website">View Website</button>
+                        <a href="">View Repository</a>
+                    </div>
+                    <ul class="tools">
+                        <li><i class="fab fa-html5"></i></li>
+                        <li><i class="fab fa-css3-alt"></i></li>
+                        <li><i class="fab fa-js-square"></i></li>
+                    </ul>
+                </div>
+                <div class="prototype">
+                    <img src="imgs/phone.png" alt="">
+                </div>
+            </div>
+
         </div>
 
     </section>
 
-    <div class="contact">
-        <h2 class="title">Get in Touch</h2>
-        <ul class="social-links">
-            <li><a href=""><i class="fab fa-twitter"></i></a></li>
-            <li><a href=""><i class="fab fa-linkedin-in"></i></a></li>
-            <li><a href=""><i class="fab fa-github"></i></a></li>
-        </ul>
-        <form action="" class="message">
-            <input type="text" placeholder="Name">
-            <input type="email" placeholder="Email">
-            <textarea name="" id="" placeholder="Message"></textarea>
-            <button type="submit">Send</button>
-        </form>
-    </div>
-
-    <footer>
-        <div class="logo">
-            <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 321.88 770.82">
-                <defs>
-                    <style>
-                        .cls-1 {
-                            fill: #231f20;
-                        }
-                    </style>
-                </defs>
-                <path class="cls-1"
-                    d="M607.29,114.59m0,107.29h0a53.65,53.65,0,0,0-53.65,53.65v63.53H607.3a53.65,53.65,0,0,0,53.64-53.65v-9.88A53.65,53.65,0,0,0,607.3,221.88ZM553.65,778.12A107.3,107.3,0,0,0,660.94,885.41h0V553.65A107.28,107.28,0,0,0,553.65,446.36h0ZM339.06,221.88v449A107.3,107.3,0,0,0,446.35,778.12h0V114.59h0A107.3,107.3,0,0,0,339.06,221.88Z"
-                    transform="translate(-339.06 -114.59)" />
-            </svg>
+    <section class="contact spacer">
+        <h2 class="title title-color">Get in Touch</h2>
+        <div class="container">
+            <ul class="social-links">
+                <li><a href=""><i class="fab fa-twitter"></i></a></li>
+                <li><a href=""><i class="fab fa-linkedin-in"></i></a></li>
+                <li><a href=""><i class="fab fa-github"></i></a></li>
+            </ul>
+            <form action="" class="message">
+                <input type="text" placeholder="Name">
+                <input type="email" placeholder="Email">
+                <textarea name="" id="" placeholder="Message"></textarea>
+                <button type="submit">Send</button>
+            </form>
         </div>
-        <ul class="nav-links">
-            <li>About</li>
-            <li>Works</li>
-            <li>Contact</li>
-        </ul>
+    </section>
+
+    <footer class="spacer">
+        <div class="container">
+            <div class="logo">
+                <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 321.88 770.82">
+                    <defs>
+                        <style>
+                            .cls-1 {
+                                fill: #231f20;
+                            }
+                        </style>
+                    </defs>
+                    <path class="cls-1"
+                        d="M607.29,114.59m0,107.29h0a53.65,53.65,0,0,0-53.65,53.65v63.53H607.3a53.65,53.65,0,0,0,53.64-53.65v-9.88A53.65,53.65,0,0,0,607.3,221.88ZM553.65,778.12A107.3,107.3,0,0,0,660.94,885.41h0V553.65A107.28,107.28,0,0,0,553.65,446.36h0ZM339.06,221.88v449A107.3,107.3,0,0,0,446.35,778.12h0V114.59h0A107.3,107.3,0,0,0,339.06,221.88Z"
+                        transform="translate(-339.06 -114.59)" />
+                </svg>
+            </div>
+            <ul class="nav-links">
+                <li><a href="">About</a></li>
+                <li><a href="">Works</a></li>
+                <li><a href="">Contact</a></li>
+            </ul>
+        </div>
     </footer>
 </body>
 

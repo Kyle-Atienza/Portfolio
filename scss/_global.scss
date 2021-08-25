@@ -17,7 +17,12 @@ body{
 }
 
 .container{
-    padding: 0 10vw;
+    padding-left: 10vw;
+    padding-right: 10vw;
+}
+.spacer{
+    padding-top: 10vh;
+    padding-bottom: 10vh;
 }
 .title-color{
     color: $primary;
@@ -57,14 +62,14 @@ p{
 
 button{
     @include Jost-Medium;
-    font-size: .8rem;
+    font-size: .7rem;
     text-transform: uppercase;
     letter-spacing: .1em;
 
     padding: .8em 1.5em;
     border: none;
     border-radius: 100px;
-    margin: 1em;
+    margin: 1em 0;
 }
 
 a{
@@ -74,4 +79,14 @@ a{
 
 li{
     list-style: none;
+}
+
+input, textarea{
+    background: $white;
+    border: 1px $dark solid;
+    padding: .5em;
+    
+    &::placeholder{
+        color: $grey;
+    }
 }
