@@ -10,7 +10,7 @@ header{
 
     .nav-links{
         display: flex; 
-        gap: 1em;
+        gap: clamp(1em, 2vw, 2.5em);
         justify-content: center;
         list-style: none;
     }
@@ -19,7 +19,7 @@ header{
 .hero{
     position: relative;
     height: 100vh;
-    //clip-path: polygon(0% 0%, 100% 0%, 100% calc(85% + 5vh), 0% 100%);
+    // clip-path: polygon(0 0%, 100% 0, 100% 100%, 0% 97%);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -32,13 +32,16 @@ header{
         z-index: 2;
         color: $white;
 
+        h1{
+            width: min-content;
+        }
         p > span{
             color: $primary;
         }
     }
     .sidebar{
         display: flex;
-        justify-content: space-between;
+        justify-content: space-around;
         align-items: center;
         background: $dark;
         width: 100%;
@@ -46,6 +49,7 @@ header{
         position: absolute;
         bottom: 0;
         left: 0;
+        
         //padding-bottom: 10vh;
 
         .logo{
@@ -58,25 +62,38 @@ header{
         .social-links{
             display: flex;
             list-style: none;
-            gap: 2em;
-            font-size: 1.5rem;
+            gap: clamp(2em, 5vw, 2.5em);
 
-            li>a{
-                color: $white;
+
+            li{
+
+                a{
+                    transition: color .2s ease-in-out;
+                    color: $white;
+                    font-size: clamp(1.2rem, 5vw, 1.5rem);
+                    
+                }
+                &:hover > a{
+                    color: $primary;
+                }
             }
         }
     }
     .my-image{
         bottom: 0;
+        
         position: absolute;
-        width: 450px;
+        //width: 450px;
+        //width: 100%;
+        width: 90vw;
+        min-width: 450px;
+        max-height: 90vh;
+        object-fit: contain;
+        margin-bottom: 20vh;
+        
         
 
-        img {
-            width: 100%;
-            object-fit: cover;
-            margin-bottom: 20vh;
-        }
+        
     }
 }
 
@@ -84,29 +101,61 @@ header{
     // padding: 10vh;
     text-align: center;
 
+
     .title{
-        margin-bottom: .5em;
+        margin-bottom: 0em;
+    }
+
+    .resume-btn{
+        transition: all .1s ease-in-out;
+
+            &:hover{
+                background: $primary;
+                color: $white
+            }
     }
 }
 
 .skills{
+    display: flex;
+    flex-wrap: wrap;
+
     .my-tools{
         background: $primary;
         color: $white;
         text-align: center;
-        padding: 5vh 0;
+        padding: 5vh $container-padding;
+        flex: 1;
+        display: grid;
+        align-items: center;
+        // clip-path: polygon(0 5%, 100% 0%, 100% 95%, 0% 100%);
 
-        .icons{
-            display: grid;
-            list-style: none;
-            gap: .2em;
-            grid-template-columns: repeat(4, minmax(0, 1fr));
-            font-size: 2rem;
-            place-items: center;
+        .content{
+            display: flex;
+            flex-direction: column;
+
+            .title{
+                margin-bottom: .2em;
+            }
+            .icons{
+                flex: 1;
+                display: grid;
+                justify-content: center;
+                list-style: none;
+                column-gap: .5em;
+                grid-template-columns: repeat(auto-fit, minmax(0, 50px));
+                grid-auto-rows: min-content;
+    
+                font-size: clamp(2rem, 5vw, 3rem);
+
+            }
         }
+
+        
     }
     .additional{
-        padding: 5vh 0;
+        flex: 1;
+        padding: $container-padding;
 
         .title{
             margin-bottom: .5em;
@@ -127,16 +176,16 @@ header{
 .works{
     background: $dark;
     color: $white;
-    // padding: 15vh 0;
+    padding: 15vh 0;
+    // clip-path: polygon(0 0%, 100% 0%, 100% 95%, 0% 100%);
 
     .title{
         text-align: center;
-        margin-bottom: 2em;
+        margin-bottom: clamp(1em, 7vw, 6em);
     }
     
     .project{
-        display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+        display: flex;
         align-items: center;
         gap: 1em;
 
@@ -149,15 +198,27 @@ header{
             text-align: center;
 
             .buttons{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
 
                 button{
                     margin-bottom: 0;
                     background: $primary;
                     color: $white;
+                    width: max-content;
+                    transition: all .1s ease-in-out;
+
+                    &:hover{
+                        background: $white;
+                        color: $primary;
+                    }
                 }
                 a{
+                    font-size: clamp(.8rem, 5vw, 1rem);
                     color: $white;
-                    font-size: .8rem;
+                    transition: color .1s ease-in-out;
+
                     &:hover{
                         color: $primary;
                     }
@@ -165,11 +226,11 @@ header{
             }
             .tools{
                 display: grid;
-                grid-template-columns: repeat(3, minmax(0, 1fr));
+                grid-template-columns: repeat(auto-fit, minmax(0, auto));
+                grid-auto-rows: min-content;
                 gap: .5em;
-                place-items: center;
-                font-size: 1.5rem;
-
+                justify-content: center;
+                font-size: clamp(1.2rem, 5vw, 3rem);
             }
         }
         .prototype{
@@ -178,11 +239,17 @@ header{
             img{
                 max-width: 100%;
             }
+            .mobile{
+                display: block;
+            }
+            .desktop{
+                display: none;
+            }
         }
     }
     .projects{
         display: grid;
-        gap: 2em;
+        gap: clamp(1em, 10vw, 5em);
 
         &>*:nth-child(even){
         
@@ -203,23 +270,41 @@ header{
     }
     .social-links{
         display: flex;
-        list-style: none;
         justify-content: center;
-        gap: 2em;
-        font-size: 1.5rem;
+        list-style: none;
+        gap: clamp(2em, 5vw, 2.5em);
+
+
+        li>a{
+            color: $dark;
+            font-size: clamp(1.2rem, 5vw, 1.5rem);
+        }
     }
     form{
         display: flex;
         flex-direction: column;
         gap: 0.5em;
         width: 70%;
+        width: 50%;
+        width: Min(70%, 600px);
         margin: 2em auto;
+        
+        button{
+            transition: all .1s ease-in-out;
+            margin: 0 auto;
+
+            &:hover{
+                background: $primary;
+                color: $white
+            }
+        }
     }
 }
 
 footer{
-    
+    padding: 10vh 0;
     background: $grey;
+
     .container{
         display: flex;
         flex-direction: column;
@@ -240,4 +325,65 @@ footer{
         }
     }
     
+}
+
+@media (min-width: 600px){
+
+    header{
+        place-items: end;
+    }
+
+    .hero{
+        align-items: flex-end;
+        justify-content: center;
+
+        .content{
+            text-align: right;
+            margin: 0;
+
+        }
+        .sidebar{
+            left: 0;
+            bottom: unset;
+            height: 100%;
+            width: Min(20vw, 150px);
+            flex-direction: column;
+    
+            .social-links{
+                flex-direction: column ;
+            }
+        }
+        .my-image{
+            margin-bottom: 0;
+        }
+    }
+
+    .about-me{
+        text-align: left;
+        width: 60vw;
+    }
+
+    .skills > .additional{
+        padding: 0 10vw;
+    }
+
+    .works{
+        margin-top: clamp(2em, 10vw, 10em);
+
+        .projects > .project{
+        
+            .prototype{
+                flex: 2;
+    
+                .mobile{
+                    display: none;
+                }
+                .desktop{
+                    display: block;
+                }
+            }
+        }
+    }
+
+
 }
