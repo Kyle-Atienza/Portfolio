@@ -34,9 +34,14 @@ header{
 
         h1{
             width: min-content;
+            
         }
-        p > span{
-            color: $primary;
+        p{
+            span{
+                background: $primary;
+                //color: $dark;
+                padding: 0 .2em;
+            }
         }
     }
     .sidebar{
@@ -49,8 +54,6 @@ header{
         position: absolute;
         bottom: 0;
         left: 0;
-        
-        //padding-bottom: 10vh;
 
         .logo{
             width: 1.5rem;
@@ -64,9 +67,7 @@ header{
             list-style: none;
             gap: clamp(2em, 5vw, 2.5em);
 
-
             li{
-
                 a{
                     transition: color .2s ease-in-out;
                     color: $white;
@@ -80,32 +81,25 @@ header{
         }
     }
     .my-image{
-        bottom: 0;
-        
+        bottom: 0; 
         position: absolute;
-        //width: 450px;
-        //width: 100%;
-        width: 90vw;
-        min-width: 450px;
+        width: Max(90vw, 450px);
         max-height: 90vh;
         object-fit: contain;
         margin-bottom: 20vh;
-        
-        
-
-        
     }
 }
 
 .about-me{
-    // padding: 10vh;
+    margin: clamp(1em, 10vw, 10em) 0;
     text-align: center;
-
+    min-height: 300px;
+    display: grid;
+    place-items: center;
 
     .title{
         margin-bottom: 0em;
     }
-
     .resume-btn{
         transition: all .1s ease-in-out;
 
@@ -117,27 +111,41 @@ header{
 }
 
 .skills{
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    place-items: center;
+    width: 85vw;
+    margin: 0 auto;
+    position: relative;
+    min-height: 300px;
 
-    .my-tools{
-        background: $primary;
-        color: $white;
-        text-align: center;
-        padding: 5vh $container-padding;
-        flex: 1;
-        display: grid;
+    .content{
+        display: flex;
+        flex-wrap: wrap;
         align-items: center;
-        // clip-path: polygon(0 5%, 100% 0%, 100% 95%, 0% 100%);
+        width: 100%;
+        background: $primary;
+        z-index: 2;
+        border-radius: 20px;
 
-        .content{
-            display: flex;
-            flex-direction: column;
-
+        &>*{
+            padding: 2em 0;
+        }
+        .my-tools{
+            color: $dark;
+            text-align: center;
+            flex: 1;
+            min-width: 300px;
+            // display: grid;
+            // align-items: center;
+            // clip-path: polygon(0 5%, 100% 0%, 100% 95%, 0% 100%);
+            position: relative;
+    
             .title{
                 margin-bottom: .2em;
+                color: $white;
             }
             .icons{
+                display: block;
                 flex: 1;
                 display: grid;
                 justify-content: center;
@@ -145,43 +153,70 @@ header{
                 column-gap: .5em;
                 grid-template-columns: repeat(auto-fit, minmax(0, 50px));
                 grid-auto-rows: min-content;
+                // color: $white;
     
                 font-size: clamp(2rem, 5vw, 3rem);
-
+    
             }
         }
-
+        .my-tools:after{
+            content: '';
+            width: 50%;
+            height: 1px;
+            background: $white;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            transform: translateX(50%);
+        }
+        .additional{
+            flex: 1;
+            text-align: center;
+    
+            .title{
+                margin-bottom: .5em;
+                color: $white;
+            }
+            .skill{
+                color: $dark;
+    
+                .icons{
+                    display: flex;
+                    gap: 1em;
+                    justify-content: center;
         
-    }
-    .additional{
-        flex: 1;
-        padding: $container-padding;
-
-        .title{
-            margin-bottom: .5em;
-        }
-        .skill > .icons{
-            display: flex;
-            gap: 1em;
-
-            li{
-                font-size: 1.5rem;
-                width: 1.5rem;
-                
+                    li{
+                        font-size: 1.5rem;
+                        width: 1.5rem;
+                        
+                        svg > path{
+                            fill: $dark;
+                        }
+                    }
+                }
             }
         }
     }
+    .overlap{
+        position: absolute;
+        bottom: 0;
+        height: 50%;
+        background: $dark;
+        width: 100vw;
+        z-index: 1;
+    }
+    
 }
 
 .works{
     background: $dark;
     color: $white;
-    padding: 15vh 0;
+    padding: clamp(3em, 20vw, 12em) 0;
     // clip-path: polygon(0 0%, 100% 0%, 100% 95%, 0% 100%);
 
     .title{
         text-align: center;
-        margin-bottom: clamp(1em, 7vw, 6em);
+        margin-bottom: clamp(1em, 12vw, 10em);
     }
     
     .project{
@@ -249,7 +284,7 @@ header{
     }
     .projects{
         display: grid;
-        gap: clamp(1em, 10vw, 5em);
+        gap: clamp(1em, 15vw, 15em);
 
         &>*:nth-child(even){
         
@@ -264,6 +299,9 @@ header{
 }
 
 .contact{
+    margin: clamp(3em, 20vw, 12em) 0;
+
+
     .title{
         text-align: center;
         margin-bottom: .5em;
@@ -284,8 +322,6 @@ header{
         display: flex;
         flex-direction: column;
         gap: 0.5em;
-        width: 70%;
-        width: 50%;
         width: Min(70%, 600px);
         margin: 2em auto;
         
@@ -363,12 +399,25 @@ footer{
         width: 60vw;
     }
 
-    .skills > .additional{
-        padding: 0 10vw;
+    .skills{
+
+        .content > .my-tools:after{
+            content: '';
+            width: 1px;
+            height: 50%;
+            background: $white;
+            position: absolute;
+            right: 0;
+            top: 0;
+            left: unset;
+            bottom: unset;
+
+            transform: translateY(50%);
+        }
     }
 
     .works{
-        margin-top: clamp(2em, 10vw, 10em);
+        // margin-top: clamp(2em, 10vw, 10em);
 
         .projects > .project{
         

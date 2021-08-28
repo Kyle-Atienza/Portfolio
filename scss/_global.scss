@@ -14,8 +14,8 @@ body{
     position: relative;
     background: $white;
     overflow-x: hidden; 
-    display: grid;
-    gap: 15vh;
+    // display: grid;
+    // gap: 15vh;
 }
 
 $container-padding: 10vw;
@@ -49,16 +49,16 @@ h3{
 }
 h4{
     @include Jost-Medium;
-    font-size: clamp(2rem, 3vw, 3rem)
+    font-size: clamp(2rem, 3vw, 4rem)
 }
 h5{
     @include Lato-Medium;
-    font-size: clamp(2rem, 3vw, 4rem);
+    font-size: clamp(1.5rem, 3vw, 3rem);
 }
 
 p{
     @include Jost-Light;
-    font-size: clamp(.8rem, 3vw, 1.2rem);
+    font-size: clamp(.8rem, 3vw, 1.5rem);
     line-height: 1.1em
 }
 
