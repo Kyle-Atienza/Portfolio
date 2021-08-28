@@ -3,11 +3,10 @@
 
 
 // colors
+$grey: #acacac;
+$dark: #222222;
+$white: #FFFFFF;
 $primary: #E54B4B;
-$primary-svg: invert(45%) sepia(28%) saturate(1731%) hue-rotate(320deg) brightness(93%) contrast(94%);
-$secomdary: #FFA987;
-$dark: #444140;
-$light: #F7EBE8;
 
 
 
@@ -15,61 +14,30 @@ $light: #F7EBE8;
 
 // fonts
 $Lato: 'Lato', sans-serif;
+$Jost: 'Jost', sans-serif;
 
 @mixin Lato-Black{
     font-family: $Lato;
     font-weight: 900;
 }
 
-@mixin Lato-Regular{
+@mixin Lato-Medium{
     font-family: $Lato;
+    font-weight: 700;
+}
+
+@mixin Jost-Medium{
+    font-family: $Jost;
+    font-weight: 500;
+
+}
+
+@mixin Jost-Regular{
+    font-family: $Jost;
     font-weight: 400;
 }
 
-@mixin Lato-Light {
-    font-family: $Lato;
+@mixin Jost-Light {
+    font-family: $Jost;
     font-weight: 300;
-}
-
-
-
-
-// container
-@mixin std-container {
-    width: 80vw;
-    margin: 0 auto;
-}
-
-
-
-
-
-//button
-@mixin std-button{
-    padding: 1em 2em;
-    // padding: .7em 1.4em;
-    padding: clamp(.7em, .9vw, 1em) clamp(1.4em, 1.8vw, 2em);
-    border-radius: 5px;
-    border: none;
-    width: max-content;
-
-    a{
-        text-decoration: none;
-    }
-}
-
-
-
-//shadow
-$card-shadow: 0px 50px 70px -50px rgba(0, 0, 0, 0.25);
-
-
-
-
-@mixin thumbnail-position($height, $container){
-    @if($height < $container){
-        align-self: center;
-    } 
-
-
 }
