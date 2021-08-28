@@ -13,6 +13,15 @@ header{
         gap: clamp(1em, 2vw, 2.5em);
         justify-content: center;
         list-style: none;
+
+        li > a{
+            transition: all .2s ease-in-out;
+
+            &:hover{
+                color: $white;
+                transform: translateY(10%);
+            }
+        }
     }
 }
 
@@ -246,10 +255,18 @@ header{
 
                     &:hover{
                         background: $white;
-                        color: $primary;
+                        
+                        a{
+                            color: $primary;
+                        }
+                    }
+                    a{  
+                        font-size: clamp(.7rem, 1vw, 1rem);
+                        color: $white;
+
                     }
                 }
-                a{
+                .view-repo{
                     font-size: clamp(.8rem, 5vw, 1rem);
                     color: $white;
                     transition: color .1s ease-in-out;
@@ -355,9 +372,19 @@ footer{
         }
         .nav-links{
             display: flex; 
-            gap: 1em;
+            gap: 3em;
+            gap: clamp(1em, 5vw, 3em);
             justify-content: center;
             list-style: none;
+
+            li > a{
+                transition: all .2s ease-in-out;
+    
+                &:hover{
+                    color: $white;
+                    transform: translateY(10%);
+                }
+            }
         }
     }
     
